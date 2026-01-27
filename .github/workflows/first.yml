@@ -19,6 +19,4 @@ jobs:
     steps:
       - name: step one
         uses: actions/checkout@v4
-      - name: step two
-        shell: pwsh
-        run: Get-ChildItem Env: | Sort-Object Name
+
