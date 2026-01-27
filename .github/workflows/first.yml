@@ -6,7 +6,7 @@ jobs:
   job1:
     name: first job
     runs-on: ubuntu-latest
-    environment: env_test
+    environment:test-env
     steps:
       - name: step one
         uses: actions/checkout@v4
@@ -15,8 +15,9 @@ jobs:
   job2:
     name: second job
     runs-on: windows-latest
-    environment: env_test
+    environment: test-env
     steps:
       - name: step one
         uses: actions/checkout@v4
+
 
