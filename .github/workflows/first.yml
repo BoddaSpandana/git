@@ -1,25 +1,24 @@
 name: first
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 jobs:
-   job1:
-      name: first job
-      runs-on: ubuntu-latest
-      environment: env_test
-      steps:
-         - name: step one
-           uses: actions/checkout@v4
-         - name: step two
-           run: env | sort
-   job2:
-      name: second job
-      runs-on: windows-latest
-      environment: env_test
-      steps:
-        - name: step one
-          uses: actions/checkout@v4
-        - name: step two
-          run: "Get-ChildItem Env: | Sort-Object Name"
-
-
-
-   
+  job1:
+    name: first job
+    runs-on: ubuntu-latest
+    environment: env_test
+    steps:
+      - name: step one
+        uses: actions/checkout@v4
+      - name: step two
+        run: env | sort
+  job2:
+    name: second job
+    runs-on: windows-latest
+    environment: env_test
+    steps:
+      - name: step one
+        uses: actions/checkout@v4
+      - name: step two
+        shell: pwsh
+        run: Get-ChildItem Env: | Sort-Object Name
